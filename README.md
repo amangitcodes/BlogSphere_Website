@@ -42,7 +42,7 @@ npm install
 Your project includes a  file for configuration. Before running the project, ensure the following key is correctly set:
 
 ```env
-SECRET=YourJWTSecret
+PORT=8000
 MONGO_URI=mongodb://localhost:27017/blogsphere
 ```
 
