@@ -39,7 +39,7 @@ npm install
 ---
 
 ### 3. **Environment Variables**
-Create a `.env` file in the root directory and add the following values:
+Your project includes a  file for configuration. Before running the project, ensure the following key is correctly set:
 
 ```env
 SECRET=YourJWTSecret
@@ -69,7 +69,7 @@ npm start
 ### 6. **Access the Application**
 Open your browser and go to:
 ```
-http://localhost:3000
+http://localhost:8000
 ```
 
 ---
@@ -117,26 +117,5 @@ http://localhost:3000
 
 ---
 
-## Adding Images
 
-Place all images for the project in the `public/assets/` folder. Reference these images in your HTML or templates using relative paths. For example:
 
-```html
-<img src="/assets/logo.png" alt="BlogSphere Logo">
-```
-
----
-
-## Contributing
-
-Want to contribute? Fork the repository, make your changes, and submit a pull request. Feedback and contributions are always welcome!
-
----
-
-## License
-
-[MIT License](LICENSE)
-
----
-
-You can now include your images in the `/public/assets/` folder and reference them dynamically in your templates. Let me know if you need help with anything else! 🚀
