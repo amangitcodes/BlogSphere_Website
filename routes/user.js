@@ -31,12 +31,33 @@ router.get("/logout", (req, res) => {
 
 router.post("/signup", async (req, res) => {
   const { fullName, email, password } = req.body;
-  await User.create({
-    fullName,
-    email,
-    password,
-  });
-  return res.redirect("/");
+
+  try {
+    // Check if a user with the same email already exists
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      // Render the signup page with an error message
+      return res.render("signup", {
+        error: "User with this email already exists",
+      });
+    }
+
+    // Create a new user if no existing user found
+    await User.create({
+      fullName,
+      email,
+      password,
+    });
+
+    // Redirect to the home page after successful signup
+    return res.redirect("/");
+  } catch (error) {
+    // Handle any unexpected errors
+    console.error("Signup Error:", error.message);
+    return res.render("signup", {
+      error: "Something went wrong. Please try again later.",
+    });
+  }
 });
 
 module.exports = router;
